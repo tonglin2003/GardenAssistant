@@ -1,0 +1,98 @@
+.heroImage{
+    background-image: url('../../../assets/heroImage2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40vh;
+    color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.title{
+    font-family:'Tilt Neon', Courier, monospace;
+}
+
+
+#homeCategory .row div .categoryImg{
+    width:100%;
+    border: 1px black solid;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 20vh;
+
+    box-shadow: inset 100vh 100vw 100px -100px rgba(0, 0, 0, 0.30);
+    padding:10px;
+
+    position: relative;
+    
+}
+
+
+#homeCategory .row div #img1{
+    background-image: url('../../../assets/plantDiary.png');
+}
+
+
+#homeCategory .row div #img2{
+    background-image: url('../../../assets/plantGallery.png');
+}
+
+#homeCategory .row div #img3{
+    background-image: url('../../../assets/plantRecognize.png');
+}
+
+#homeCategory .row div .category-innerText{
+    border: 1.5px white solid;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 20%;
+
+    font-family:'Open Sans', Courier, monospace;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: height 0.3s;
+
+}
+
+.categoryContainer:hover .category-innerText{
+    height: 90% !important;
+    font-weight: 900 !important;
+}
+
+
+.subHeroImage{
+    background-image: url("https://media.allure.com/photos/5fdcf51ca53a227c5140c001/16:9/w_2560%2Cc_limit/AllureBeginnerHouseplants.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    
+    box-shadow: inset 100vh 100vw 100px -100px rgba(0, 0, 0, 0.5);
+
+    font-family: 'Open Sans', Courier, monospace;
+}
+
+.subHeroImage h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container div{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}

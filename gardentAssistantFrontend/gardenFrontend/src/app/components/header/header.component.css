@@ -1,0 +1,17 @@
+nav{
+    background-color: #2c4a27 !important;
+    
+}
+
+.navbar-brand{
+    color: white !important;
+    font-family: 'Tilt Neon', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-link{
+    color: white !important;
+}
+
+.white-filter {
+    filter: grayscale(100%);
+  }
