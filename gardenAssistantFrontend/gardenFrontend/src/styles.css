@@ -9,7 +9,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --b: 3px;   /* border thickness */
     --s: .45em; /* size of the corner */
     --color: #ffffff;
-    
+
     padding: calc(.5em + var(--s)) calc(.9em + var(--s));
     color: var(--color);
     --_p: var(--s);
@@ -20,22 +20,27 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     outline: var(--b) solid #0000;
     outline-offset: .6em;
     font-size: 16px;
-  
+
     border: 0;
-  
+
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
   }
-  
+
   .button-89:hover,
   .button-89:focus-visible{
     --_p: 0px;
     outline-color: var(--color);
     outline-offset: .05em;
   }
-  
+
   .button-89:active {
     background: var(--color);
     color: #fff;
   }
+
+
+mat-progress-bar .mat-progress-bar-buffer {
+  background: #480505;
+}

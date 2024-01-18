@@ -1,0 +1,11 @@
+.heroImage{
+  background-image: url('../../../assets/plantDiaryHeroImage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 40vh;
+  color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+

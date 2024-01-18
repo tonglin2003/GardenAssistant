@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
-import {PlantGalleryCardComponent} from "../plant-gallery-card/plant-gallery-card.component";
+import {PlantGalleryCardComponent} from "./plant-gallery-card/plant-gallery-card.component";
 
 @Component({
   selector: 'app-plant-gallery',
