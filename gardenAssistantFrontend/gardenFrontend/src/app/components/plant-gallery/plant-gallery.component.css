@@ -1,0 +1,16 @@
+.heroImage{
+  background-image: url('../../../assets/plantGalleryHeroImage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 40vh;
+  color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.grid {
+  columns: 15rem;
+  gap: 1rem;
+  counter-reset: grid;
+}

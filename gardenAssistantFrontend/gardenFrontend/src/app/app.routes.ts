@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { PlantDetailsComponent } from './components/plant-details/plant-details.component';
+import {PlantGalleryComponent} from "./components/plant-gallery/plant-gallery.component";
+
 
 const routeConfig: Routes = [
     {
@@ -9,11 +11,11 @@ const routeConfig: Routes = [
         title: "Home"
     },
     {
-        path: 'plant/:id',
-        component: PlantDetailsComponent,
-        title: "Plant"
+        path: 'plantGallery',
+        component: PlantGalleryComponent,
+        title: "Plant Gallery"
     }
-    
+
 ];
 
 export default routeConfig;

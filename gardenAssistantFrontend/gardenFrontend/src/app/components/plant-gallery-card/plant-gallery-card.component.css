@@ -1,0 +1,50 @@
+
+.plantCardImg img {
+  width: 100%;
+
+}
+
+.plantCardImg {
+  font-family: 'Tilt Neon', Courier, monospace;
+  overflow: auto;
+  background-color: white;
+  /*padding: 15px;*/
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  margin: 10px;
+
+  box-shadow:
+    5px 5px 0 #ffffff,
+    4px 6px 0 #2f3a30,
+    6px 6px 0 #2f3a30,
+    5px 4px 0 #2f3a30;
+
+  transition: box-shadow 0.3s, transform 0.3s;
+
+}
+
+.plantCardImg:hover{
+  box-shadow:
+    6px 6px 0 #2f3a30;
+  transform: translate(-5px, -5px);
+}
+
+.plantCardImg .plantCardText{
+  padding: 10px 0 10px 10px;
+
+}
+
+.plantCardSubText{
+  font-size: 0.8rem;
+  color: #989898;
+}
+
+mat-progress-bar{
+  width: 75%;
+  height: 0.75vh;
+  display: inline-block;
+}
+
+.item{
+  margin-top: 5vh;
+}
