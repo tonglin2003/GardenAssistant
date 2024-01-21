@@ -32,6 +32,7 @@ public class UserPlant {
         this.careRequirement.put("temperature", careRequirement.getOrDefault("temperature", null));
         this.careRequirement.put("soil", careRequirement.getOrDefault("soil", null));
         this.careRequirement.put("humidity", careRequirement.getOrDefault("humidity", null));
+        this.careRequirement.put("health", careRequirement.getOrDefault("health", null));
 
         this.userId = userId;
 

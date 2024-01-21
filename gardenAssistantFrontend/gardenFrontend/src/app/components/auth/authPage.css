@@ -1,0 +1,91 @@
+.loginBackground{
+    background-image: url('../../../assets/loginBackground.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+
+    display: grid;
+    place-items: center;
+
+}
+
+.signupBackground{
+    background-image: url('../../../assets/signupBackground.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+
+    display: grid;
+    place-items: center;
+
+}
+
+
+.authContainer{
+    /*height: 40vh;*/
+    width: 450px;
+    background-color: rgba(255,255,255);
+    border-radius: 0.75rem;
+    padding: 35px;
+
+
+    font-family: 'Tilt Neon', Tahoma, Geneva, Verdana, sans-serif
+
+}
+
+.authContainer h1{
+    font-family: 'Tilt Neon', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.authContainer hr{
+    width: 50px;
+    border: 4px solid rgb(82, 180, 10, 100%) !important;
+    border-radius: 2rem;
+
+    background-color: rgb(82, 180, 104);
+
+    margin: 0 auto 0 auto;
+}
+
+
+
+
+.inputBox{
+
+    width: 20rem;
+
+    border-radius: 2rem;
+
+    padding:12px;
+    height: 5vh;
+
+    border: 1px rgba(168, 168, 168, 0.5) solid;
+
+    transition: outline 0.3s, outline-offset 0.8s, border 0.3s;
+
+}
+
+.focused{
+    outline-offset: -4px;
+    border: 1px rgb(46, 114, 78) solid;
+    outline: 4px solid rgba(224, 238, 227, 0.70);
+}
+
+.authButton{
+    background-color: rgb(82, 180, 104);
+    border-radius: 2rem;
+    width: 20rem;
+    height: 5vh;
+    color:white;
+
+    border: 1px solid rgb(82, 180, 104);
+
+    transition: background-color 0.8s;
+}
+
+.authButton:hover{
+    background-color: rgb(53, 119, 68);
+}

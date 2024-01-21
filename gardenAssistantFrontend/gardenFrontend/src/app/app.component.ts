@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent } from './components/footer/footer.component';
+import {HttpClientModule} from "@angular/common/http";
 
 import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
 
@@ -18,12 +19,14 @@ import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, 
-    RouterOutlet, 
-    RouterModule, 
-    HeaderComponent, 
-    MatIconModule, 
-    FooterComponent],
+    CommonModule,
+    RouterOutlet,
+    RouterModule,
+    HeaderComponent,
+    MatIconModule,
+    FooterComponent,
+    HttpClientModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
