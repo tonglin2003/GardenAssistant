@@ -35,6 +35,13 @@ const routeConfig: Routes = [
         component: SignupComponent,
         title: 'Sign Up'
     }
+    ,
+    {
+        path: 'user/plantDiary/:id',
+        component: PlantDetailsComponent,
+        title: 'Your Plant',
+        canActivate: [AuthGuardService]
+    }
 
 ];
 

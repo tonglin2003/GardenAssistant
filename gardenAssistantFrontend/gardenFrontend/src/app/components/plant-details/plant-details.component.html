@@ -1,1 +1,64 @@
-<p>plant-details works! And this is plant id #{{plantId}} </p>
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <img [src]="userPlant?.imgUrl" class="w-100">
+        </div>
+
+
+        <div class="col w-100" >
+            <p>name: {{userPlant?.name}}</p>
+            <p>Care Note: {{userPlant?.careNote}}</p>
+
+            <div class="plantStatus">
+                Health:
+                <mat-progress-bar mode="determinate" [value]="userPlant?.careRequirement?.health" class="healthProgressBar"></mat-progress-bar>
+            </div>
+
+            <div class="plantStatus">
+                Current Water:
+                <mat-progress-bar mode="determinate" [value]="userPlant?.careRequirement?.water" class="waterProgressBar"></mat-progress-bar>
+            </div>
+
+            <div class="plantStatus">
+                Current Sunlight:
+                <mat-progress-bar mode="determinate" [value]="userPlant?.careRequirement?.sunlight" class="sunlightProgressBar"></mat-progress-bar>
+            </div>
+
+            <button class="button-89" style="--color: black" (click)="openEditWindow()">Update Plant Status</button>
+
+        </div>
+    </div>
+
+    <div *ngIf="showEditWindow" class="popUpWindowContainer">
+
+        <div class="popUpWindow">
+            <h1>Update Plant Status</h1>
+            <button (click)="closeEditWindow()" class="exitButton">
+                <i class="fa fa-times"></i>
+            </button>
+
+            <form class="d-flex flex-column justify-content-center" [formGroup]="updateForm" (submit)="submitUpdateForm()">
+                <input type="text" class="my-2" formControlName="name">
+
+                <input type="text" class="my-2" formControlName="careNote">
+
+                <input type="text" class="my-2" formControlName="imgUrl">
+
+                <h1> Plant Status</h1>
+
+                Health: <input type="number" class="my-2" formControlName="health">
+
+                Water: <input type="number" class="my-2" formControlName="water">
+
+                Sunlight: <input type="number" class="my-2" formControlName="sunlight">
+
+                <button class="button-89 mt-3" style="--color: black" type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+

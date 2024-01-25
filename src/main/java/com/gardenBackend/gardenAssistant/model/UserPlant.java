@@ -18,21 +18,23 @@ public class UserPlant {
     private String imgUrl;
     private Map<String, Object> careRequirement;
     private String userId;
+    private String careNote;
 
 
-    public UserPlant(String name, String description, String imgUrl, Map<String, Object> careRequirement, String userId){
+    public UserPlant(String name, String description, String imgUrl, Map<String, Object> careRequirement, String userId, String careNote){
         super();
         this.name = name;
         this.description = description;
         this.imgUrl = imgUrl;
+
         // Setting the careRequirement of the UserPlant
         this.careRequirement = new HashMap<>();
         this.careRequirement.put("sunlight", careRequirement.getOrDefault("sunlight", null));
         this.careRequirement.put("water", careRequirement.getOrDefault("water", null));
         this.careRequirement.put("temperature", careRequirement.getOrDefault("temperature", null));
-        this.careRequirement.put("soil", careRequirement.getOrDefault("soil", null));
-        this.careRequirement.put("humidity", careRequirement.getOrDefault("humidity", null));
         this.careRequirement.put("health", careRequirement.getOrDefault("health", null));
+
+        this.careNote = careNote;
 
         this.userId = userId;
 
@@ -57,6 +59,8 @@ public class UserPlant {
     public String getDescription() {
         return description;
     }
+
+    public String getCareNote() { return careNote; }
 
     public void setDescription(String description) {
         this.description = description;

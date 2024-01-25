@@ -36,7 +36,7 @@ public class AuthenticationService {
 
         var savedUser = userRepository.save(user);
         var jwtToken = jwtService.generateToken(user);
-        return AuthenticationResponse.builder().token(jwtToken).build();
+        return new AuthenticationResponse(jwtToken, user.getUserId());
     }
 
     public AuthenticationResponse authentication(AuthenticationRequest request){
@@ -53,7 +53,7 @@ public class AuthenticationService {
                 .orElseThrow();
 
         var jwtToken = jwtService.generateToken(user);
-        return AuthenticationResponse.builder().token(jwtToken).build();
+        return new AuthenticationResponse(jwtToken, user.getUserId());
     }
 
 }

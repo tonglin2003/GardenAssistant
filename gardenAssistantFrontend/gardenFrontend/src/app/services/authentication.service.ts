@@ -13,12 +13,16 @@ export class AuthenticationService{
     // set the token and userId into the cookie
     setTokenInCookie(token: string, userId: string) {
         this.cookieService.set('authToken', token);
-        this.cookieService.set('userId', token);
+        this.cookieService.set('userId', userId);
     }
 
     // return the token from the cookie
     getTokenCookie(){
         return this.cookieService.get('authToken');
+    }
+
+    getUserId(){
+        return this.cookieService.get('userId');
     }
 
     async submitLogin(account: string, password: string): Promise<Boolean>{

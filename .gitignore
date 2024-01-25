@@ -1,3 +1,5 @@
 src/main/resources/application-security.properties
 target
 src/main/resources/application.properties
+gardenAssistantFrontend/gardenFrontend/src/environments/environment.ts
+gardenAssistantFrontend/gardenFrontend/src/environments/environment.prod.ts

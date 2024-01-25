@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "${frontendUrl}")
 @RequestMapping("/userPlant")
 public class UserPlantController {
     private final UserPlantService userPlantService;
