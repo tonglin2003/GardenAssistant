@@ -20,18 +20,10 @@ export class HomeComponent{
   userPlantService = inject(UserPlantService);
 
   authenticationService = inject(AuthenticationService)
-  // authService = inject(AuthService);
 
 
   constructor() {
-    // console.log(this.authenticationService.getTokenCookie());
 
-
-    // console.log("From home: " + this.authenticationService.getTokenCookie());
-    // this.userPlantService.getPlant().then((plant: UserPlant) => {
-    //   this.userPlant = plant;
-    //   console.log(this.userPlant);
-    // });
 
   }
 

@@ -14,7 +14,7 @@ const routeConfig: Routes = [
         title: "Home"
     },
     {
-        path: 'plantGallery',
+        path: 'plantGallery/:page',
         component: PlantGalleryComponent,
         title: "Plant Gallery"
     },

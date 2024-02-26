@@ -2,13 +2,49 @@
 
 </div>
 
-<div class="d-flex justify-content-center my-3">
-  <hr width="50" class="">
-  <h1 class="title mx-1">
-    Your Plants
-  </h1>
-  <hr width="50" class="">
+<div>
+  <div class="d-flex justify-content-center my-3">
+    <hr width="50" class="">
+    <h1 class="title mx-1">
+      Your Plants
+    </h1>
+    <hr width="50" class="">
+  </div>
 </div>
 
+<div class="d-flex justify-content-center" (click)="openAddWindow()">
+  <svg class="mr-2" width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+  Add Plant
+</div>
+
+
 <app-plant-diary-card *ngFor="let userPlant of plantList" [userPlant]="userPlant"></app-plant-diary-card>
+
+<div *ngIf="showAddWindow" class="popUpWindowContainer">
+
+  <div class="popUpWindow">
+    <h1>Update Plant Status</h1>
+    <button (click)="closeAddWindow()" class="exitButton">
+      <i class="fa fa-times"></i>
+    </button>
+
+    <form class="d-flex flex-column justify-content-center" [formGroup]="addPlantForm" (submit)="submitAddForm()">
+      <input type="text" class="my-2" formControlName="name" placeholder="Plant Name">
+
+      <input type="text" class="my-2" formControlName="careNote" placeholder="Plant Care Note">
+
+      <input type="text" class="my-2" formControlName="imgUrl" placeholder="Image Url">
+
+      <h1> Plant Status</h1>
+
+      Health: <input type="number" class="my-2" formControlName="health">
+
+      Water: <input type="number" class="my-2" formControlName="water">
+
+      Sunlight: <input type="number" class="my-2" formControlName="sunlight">
+
+      <button class="button-89 mt-3" style="--color: black" type="submit">Add Plant</button>
+    </form>
+  </div>
+</div>
 

@@ -24,7 +24,7 @@ export class PlantDetailsComponent {
   userPlant: UserPlant | undefined;
   router = inject(Router);
 
-  showEditWindow : Boolean = false;
+  showEditWindow : Boolean = false; // flag to control open/close of the pop up window
 
   plantId:string = '';
 
@@ -79,10 +79,12 @@ export class PlantDetailsComponent {
 
       if (updateSuccess) {
         await this.router.navigate(['user/plantDiary']);
-      } else{
+      }
+      else{
         alert("Please try again later");
       }
-    } else{
+    }
+    else {
         alert("Please try again later");
       }
     }

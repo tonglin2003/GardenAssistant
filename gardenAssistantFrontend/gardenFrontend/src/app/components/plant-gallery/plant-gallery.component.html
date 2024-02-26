@@ -5,17 +5,55 @@
 
 <div class="m-3">
 
-  <div class="grid">
+  <div class="grid" *ngIf="plantGalleryList">
 
-    <app-plant-gallery-card></app-plant-gallery-card>
-    <app-plant-gallery-card></app-plant-gallery-card>
-    <app-plant-gallery-card></app-plant-gallery-card>
-    <app-plant-gallery-card></app-plant-gallery-card>
-    <app-plant-gallery-card></app-plant-gallery-card>
-    <app-plant-gallery-card></app-plant-gallery-card>
-    <app-plant-gallery-card></app-plant-gallery-card>
+    <ng-container *ngFor="let plantInfo of plantGalleryList">
+      <app-plant-gallery-card *ngIf="plantInfo" [plantInfo]="plantInfo"></app-plant-gallery-card>
+    </ng-container>
 
 
   </div>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center" *ngIf="page <= 3; else extendPagination">
+      <li class="page-item disabled" *ngIf="page == 1; else enablePreviousPage">
+        <a class="page-link" tabindex="-1" aria-disabled="true">Previous</a>
+      </li>
+      <ng-template #enablePreviousPage>
+        <li class="page-item">
+          <a class="page-link" (click)="changePage(page-1)" tabindex="-1" >Previous</a>
+        </li>
+      </ng-template>
+
+      <li class="page-item"><a class="page-link" (click)="changePage(1)" [class.active]="page === 1">1</a></li>
+      <li class="page-item"><a class="page-link" (click)="changePage(2)" [class.active]="page === 2">2</a></li>
+      <li class="page-item"><a class="page-link" (click)="changePage(3)" [class.active]="page === 3">3</a></li>
+      <li class="page-item disabled"><a class="page-link">...</a></li>
+      <li class="page-item disabled"><a class="page-link">99</a></li>
+      <li class="page-item">
+        <a class="page-link" (click)="changePage(page+1)">Next</a>
+      </li>
+    </ul>
+
+    <ng-template #extendPagination>
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" tabindex="-1" (click)="changePage(page-1)">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" (click)="changePage(1)">1</a></li>
+        <li class="page-item disabled"><a class="page-link" aria-disabled="true">...</a></li>
+        <li class="page-item"><a class="page-link" (click)="changePage(page-1)">{{page-1}}</a></li>
+        <li class="page-item active"><a class="page-link">{{page}}</a></li>
+        <li class="page-item"><a class="page-link" (click)="changePage(page+1)">{{page+1}}</a></li>
+        <li class="page-item disabled"><a class="page-link" aria-disabled="true">...</a></li>
+        <li class="page-item disabled"><a class="page-link" aria-disabled="true">99</a></li>
+        <li class="page-item">
+          <a class="page-link" (click)="changePage(page+1)">Next</a>
+        </li>
+      </ul>
+    </ng-template>
+  </nav>
+
+
 
 </div>

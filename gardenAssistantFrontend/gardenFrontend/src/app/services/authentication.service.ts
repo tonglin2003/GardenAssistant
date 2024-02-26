@@ -74,7 +74,6 @@ export class AuthenticationService{
             }
 
             const data = await response.json();
-            console.log(data);
             this.setTokenInCookie(data.token, data.userId);
             return true;
 

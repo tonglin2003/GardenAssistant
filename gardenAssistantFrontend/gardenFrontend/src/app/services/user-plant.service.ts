@@ -52,7 +52,6 @@ export class UserPlantService {
       }
 
       const data = await response.json();
-      console.log(data);
       return data as UserPlant;
 
     } catch(error){
@@ -98,6 +97,45 @@ export class UserPlantService {
     }
 
   }
+
+  async addNewPlant(name: string, imgUrl: string, water: number, sunlight: number, health: number, careNote: string): Promise<UserPlant>{
+    const url = `${this.apiUrl}/userPlant/add`;
+
+    const newPlant = {
+      name: name,
+      imgUrl: imgUrl,
+      careRequirement: {
+        health: health,
+        water: water,
+        sunlight: sunlight
+      },
+      careNote: careNote,
+      userId: this.authenticationService.getUserId()
+    }
+
+    try{
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          'Authorization': `Bearer ${this.authenticationService.getTokenCookie()}`
+        },
+        body: JSON.stringify(newPlant)
+      });
+
+      if (!response.ok){ throw new Error(`HTTP error! Status: ${response.status}`); }
+
+      const data = await response.json();
+      return data as UserPlant;
+
+    }catch(error){
+      console.error("Error: ", error);
+      throw error;
+    }
+
+  }
+
+
 
   constructor() {}
 
