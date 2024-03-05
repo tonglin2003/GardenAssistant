@@ -34,9 +34,6 @@ public class UserPlantController {
 
     @PostMapping("/add")
     public ResponseEntity<UserPlant> addUserPlant(@RequestBody UserPlant userPlant){
-        // either frontend include the userId or the backend include the userId
-
-        // for now frontend will provide the userId
         UserPlant plant = userPlantService.addUserPlant(userPlant);
         return new ResponseEntity<>(plant, HttpStatus.CREATED);
     }

@@ -4,7 +4,7 @@ import {environment} from "../../environments/environment";
 import {HttpHeaders} from "@angular/common/http";
 import {response} from "express";
 import {AuthenticationService} from "./authentication.service";
-// import {AuthService} from "./auth.service";
+import {UserPlantDiary} from "../models/userPlantDiary";
 
 @Injectable({
   providedIn: 'root'
@@ -90,6 +90,38 @@ export class UserPlantService {
 
       const data = await response.json();
       return data as UserPlant;
+
+    }catch(error){
+      console.error("Error: ", error);
+      throw error;
+    }
+
+  }
+
+  async addDiaryByPlantId(plantId: string, title: string, content: string): Promise<UserPlantDiary>{
+    const url = `${this.apiUrl}/userPlant/add/plantDiary`;
+
+    const newPlantDiary = {
+      plantId: plantId,
+      title: title,
+      content: content,
+      userId: this.authenticationService.getUserId()
+    }
+
+    try{
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          'Authorization': `Bearer ${this.authenticationService.getTokenCookie()}`
+        },
+        body: JSON.stringify(newPlantDiary)
+      });
+
+      if (!response.ok){ throw new Error(`HTTP error! Status: ${response.status}`); }
+
+      const data = await response.json();
+      return data as UserPlantDiary;
 
     }catch(error){
       console.error("Error: ", error);

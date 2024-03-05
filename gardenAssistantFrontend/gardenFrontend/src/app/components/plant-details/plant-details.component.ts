@@ -25,9 +25,11 @@ export class PlantDetailsComponent {
   router = inject(Router);
 
   showEditWindow : Boolean = false; // flag to control open/close of the pop up window
+  showAddDiaryWindow: Boolean = false; // flag to control the open/close of the add diary pop up window
 
   plantId:string = '';
 
+  // update form for the plant's status
   updateForm = new FormGroup({
     name: new FormControl(''),
     imgUrl: new FormControl(''),
@@ -36,14 +38,26 @@ export class PlantDetailsComponent {
     health: new FormControl(0),
     careNote: new FormControl('')
 
+  });
+
+  addDiaryForm = new FormGroup({
+    title: new FormControl(''),
+    content: new FormControl('')
   })
 
-  public openEditWindow(){
-    this.showEditWindow = true;
+  // TODO turn into enumeration for better readability and less hard core
+  public openWindow(windowType: string){
+    if (windowType == "update"){
+      this.showEditWindow = true;
+    }
+    else if (windowType == "add diary"){
+      this.showAddDiaryWindow = true;
+    }
   }
 
   public closeEditWindow(){
     this.showEditWindow = false;
+    this.showAddDiaryWindow = false;
   }
 
   constructor(){
@@ -88,6 +102,27 @@ export class PlantDetailsComponent {
         alert("Please try again later");
       }
     }
+
+  async submitAddDiaryForm(){
+    if (this.userPlant?.plantId) {
+      const addSuccess = await this.userPlantService.addDiaryByPlantId(
+        this.userPlant.plantId ?? '',
+        this.updateForm.value.title ?? '',
+        this.updateForm.value.content ?? ''
+      );
+
+      if (addSuccess) {
+        // TODO go the previous page
+        await this.router.navigate(['user/plantDiary']);
+      }
+      else{
+        alert("Please try again later");
+      }
+    }
+    else {
+      alert("Please try again later");
+    }
+  }
 
 
 
