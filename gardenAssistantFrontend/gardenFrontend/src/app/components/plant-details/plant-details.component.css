@@ -27,3 +27,11 @@
     right: 0;
     top: 0;
 }
+
+#Capa_1{
+  transition: fill 0.5s;
+}
+
+#Capa_1 :hover{
+  fill: black;
+}
