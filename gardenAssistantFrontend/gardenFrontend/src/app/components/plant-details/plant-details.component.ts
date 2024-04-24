@@ -107,8 +107,8 @@ export class PlantDetailsComponent {
     if (this.userPlant?.plantId) {
       const addSuccess = await this.userPlantService.addDiaryByPlantId(
         this.userPlant.plantId ?? '',
-        this.updateForm.value.title ?? '',
-        this.updateForm.value.content ?? ''
+        this.addDiaryForm.value.title ?? '',
+        this.addDiaryForm.value.content ?? ''
       );
 
       if (addSuccess) {
