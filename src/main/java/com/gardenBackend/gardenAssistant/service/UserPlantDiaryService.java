@@ -37,8 +37,6 @@ public class UserPlantDiaryService {
     public List<UserPlantDiary> findPlantDiaryByPlantId(String plantId){
         List<UserPlantDiary> userPlantDiaries = userPlantDiaryRepository.findUserPlantDiariesByPlantId(plantId);
         if (userPlantDiaries != null) {
-            System.out.println("UserPlantDiary: " + userPlantDiaries);
-
             return userPlantDiaries;
         } else {
             throw new ItemNotFound("User Plant #" + plantId + " doesn't have diaries found");

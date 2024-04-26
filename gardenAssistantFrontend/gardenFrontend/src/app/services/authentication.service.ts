@@ -51,7 +51,7 @@ export class AuthenticationService{
         }
     }
 
-    async submitSignUp(username: string, avatarUrl: string, account: string, password: string){
+    async submitSignUp(username: string, avatarUrl: String, account: string, password: string){
         const url = `${this.apiUrl}/auth/register`;
         const signUpBody = {
             username: username,

@@ -43,7 +43,6 @@ public class UserPlantDiaryController {
     @GetMapping("/plantId/{plantId}")
     public ResponseEntity<List<UserPlantDiary>> getUserPlantDiaryByPlantId(@PathVariable("plantId")String plantId){
         List<UserPlantDiary> diaries = userPlantDiaryService.findPlantDiaryByPlantId(plantId);
-        System.out.println(diaries);
         return new ResponseEntity<>(diaries, HttpStatus.OK);
     }
 }

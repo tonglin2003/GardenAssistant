@@ -31,7 +31,6 @@ export class PlantGalleryComponent {
   }
 
   async changePage(newPage: number) {
-    alert("hello");
     await this.router.navigate(['/plantGallery', newPage]);
     location.reload();
   }

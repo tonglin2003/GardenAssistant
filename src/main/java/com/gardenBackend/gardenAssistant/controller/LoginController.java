@@ -14,13 +14,11 @@ public class LoginController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String showLoginPage() {
-        System.out.println("trying to login ");
         return "welcome";
     }
 
     @GetMapping("/")
     public String defaultFunc(){
-        System.out.println("In the default page");
         return "hello";
     }
 

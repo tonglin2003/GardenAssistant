@@ -46,8 +46,6 @@ public class UserPlantService {
         List<UserPlant> userPlants = userPlantRepository.findUserPlantByUserId(userId);
 
         if (!userPlants.isEmpty()) {
-            System.out.println("UserPlant: " + userPlants);
-
             return userPlants;
         } else {
             throw new ItemNotFound("User " + userId + " does not have any plant");

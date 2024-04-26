@@ -40,7 +40,6 @@ public class AuthenticationService {
     }
 
     public AuthenticationResponse authentication(AuthenticationRequest request){
-
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
                 new UsernamePasswordAuthenticationToken(
                         request.getAccount(),

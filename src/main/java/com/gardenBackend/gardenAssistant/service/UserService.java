@@ -31,8 +31,6 @@ public class UserService {
     public User updateUser(User user){
         String encodedPassword = passwordEncoder.encode(user.getPassword());
 
-        System.out.println("I reached the Service for update user");
-
         user.setPassword(encodedPassword);
         return userRepository.save(user);
     }
@@ -42,7 +40,6 @@ public class UserService {
     }
 
     public List<User> getAllUser(){
-        System.out.println("Im in the service, control group");
         return userRepository.findAll();
     }
 
