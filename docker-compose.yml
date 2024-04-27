@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  angular-frontend:
+    image: angular-frontend:latest
+    container_name: "angular-frontend"
+    ports:
+      - "4200:4200"
+  mongo:
+    image: mongo:latest
+    container_name: "mongo"
+    ports:
+      - "28017:27017"
+  spring-boot-demo:
+    image: spring-boot-demo:latest
+    container_name: "spring-boot-demo"
+    ports:
+      - "8081:8080"

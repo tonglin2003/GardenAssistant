@@ -30,4 +30,10 @@ public class AuthenticationController {
             ){
         return ResponseEntity.ok(service.register(request));
     }
+
+    @GetMapping("/testConnection")
+    public String testConnection(){
+        System.out.println("In the default page");
+        return "Welcome to the app";
+    }
 }
