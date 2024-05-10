@@ -63,5 +63,6 @@ Register an account for "https://perenual.com/" Then it would give an api key fo
 docker compose up
 ```
 
-
+Postman API for the Spring Boot: https://www.postman.com/gold-equinox-29662/workspace/gardenassistant/overview
+There are examples of each API request for the Spring Boot
 
